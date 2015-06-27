@@ -98,12 +98,20 @@ var Engine = (function(global) {
     }
 
     function checkCollisions() {
-        allEnemies.forEach(function(enemy) {
-            console.log(enemy.x + " " + enemy.y);
-        });
+        console.log(enemy1.x + " " + enemy1.y);
+        // console.log(enemy2.x + " " + enemy2.y);
+        // allEnemies.forEach(function(enemy) {
+        //     console.log(enemy.x + " " + enemy.y);
+        // });
+
         console.log(player.x + " " + player.y);
 
         //TODO check x and y coordinates when they're matching
+        if (enemy1.x > player.x + 0.5 && 
+            enemy1.y > player.y + 0.5) {
+            // reset();
+            location.reload();
+        }
     }
 
     /* This function initially draws the "game level", it will then call
@@ -170,6 +178,7 @@ var Engine = (function(global) {
      */
     function reset() {
         // noop
+        console.log("game over");
     }
 
     /* Go ahead and load all of the images we know we're going to need to
