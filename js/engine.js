@@ -95,7 +95,9 @@ var Engine = (function(global) {
             if (enemy.x < 501) {
                 enemy.update(dt);
             } else {
-                console.log("I'm outside");
+                console.log("I'm outside canvas");
+                // remove enemy when they're outside canvas
+                allEnemies.splice(enemy, 0);
             }
         });
         player.update();
