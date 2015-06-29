@@ -58,6 +58,7 @@ Player.prototype.handleInput = function(keyup) {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 var allEnemies = [];
+
 var enemy1 = new Enemy;
 enemy1.x = 0;
 enemy1.y = 60;
