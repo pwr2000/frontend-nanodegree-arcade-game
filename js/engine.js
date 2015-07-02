@@ -111,8 +111,11 @@ var Engine = (function(global) {
         console.log(player.x + " " + player.y);
 
         //TODO check x and y coordinates when they're matching
-        if (enemy1.x > player.x + 0.5 && 
-            enemy1.y > player.y + 0.5) {
+        if (enemy1.x < player.x + 60 &&
+            enemy1.x > player.x - 60 &&
+            enemy1.y < player.y + 50 &&
+            enemy1.y > player.y - 20) {
+            // collision detected!
             alert("Game Over");
             location.reload();
         }
