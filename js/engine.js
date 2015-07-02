@@ -184,8 +184,17 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // noop
-        console.log("game over");
+        // TODO: use for-loop to create enemies
+        enemy1.x = 0;
+        enemy1.y = 60;
+        allEnemies.push(enemy1);
+
+        enemy2.x = 400;
+        enemy2.y = 230;
+        allEnemies.push(enemy2);
+
+        player.x = 200;
+        player.y = 300;
     }
 
     /* Go ahead and load all of the images we know we're going to need to

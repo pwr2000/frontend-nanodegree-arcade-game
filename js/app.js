@@ -58,20 +58,21 @@ Player.prototype.handleInput = function(keyup) {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 var allEnemies = [];
+var player = new Player;
 
 var enemy1 = new Enemy;
-enemy1.x = 0;
-enemy1.y = 60;
-allEnemies.push(enemy1);
+// enemy1.x = 0;
+// enemy1.y = 60;
+// allEnemies.push(enemy1);
 
 var enemy2 = new Enemy;
-enemy2.x = 400;
-enemy2.y = 230;
-allEnemies.push(enemy2);
+// enemy2.x = 400;
+// enemy2.y = 230;
+// allEnemies.push(enemy2);
 
-var player = new Player;
-player.x = 200;
-player.y = 300;
+// var player = new Player;
+// player.x = 200;
+// player.y = 300;
 
 
 // This listens for key presses and sends the keys to your
