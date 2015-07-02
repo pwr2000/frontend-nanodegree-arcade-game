@@ -95,7 +95,7 @@ var Engine = (function(global) {
             if (enemy.x < 501) {
                 enemy.update(dt);
             } else {
-                console.log("I'm outside canvas");
+                console.log("one of enemies is out of canvas");
                 // remove enemy when they're outside canvas
                 allEnemies.splice(enemy, 0);
             }

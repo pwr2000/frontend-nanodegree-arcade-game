@@ -30,7 +30,14 @@ var Player = function() {
 }
 
 Player.prototype.update = function(dt) {
-
+    if (this.x < -50      ||
+        this.x > 480    ||
+        this.y < -100      ||
+        this.y > 460) {
+        console.log("player is out of canvas");
+        alert("Player is out of bound");
+        location.reload();
+    }
 }
 
 Player.prototype.render = function() {
