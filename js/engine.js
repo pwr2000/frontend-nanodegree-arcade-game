@@ -106,19 +106,27 @@ var Engine = (function(global) {
     function checkCollisions() {
         allEnemies.forEach(function(enemy) {
             console.log(enemy.x + " " + enemy.y);
+            if (enemy.x < player.x + 60 &&
+                enemy.x > player.x - 60 &&
+                enemy.y < player.y + 50 &&
+                enemy.y > player.y - 20) {
+                // collision detected!
+                alert("Game Over");
+                location.reload();
+        }
         });
 
         console.log(player.x + " " + player.y);
 
         //TODO check x and y coordinates when they're matching
-        if (enemy1.x < player.x + 60 &&
-            enemy1.x > player.x - 60 &&
-            enemy1.y < player.y + 50 &&
-            enemy1.y > player.y - 20) {
-            // collision detected!
-            alert("Game Over");
-            location.reload();
-        }
+        // if (enemy1.x < player.x + 60 &&
+        //     enemy1.x > player.x - 60 &&
+        //     enemy1.y < player.y + 50 &&
+        //     enemy1.y > player.y - 20) {
+        //     // collision detected!
+        //     alert("Game Over");
+        //     location.reload();
+        // }
     }
 
     /* This function initially draws the "game level", it will then call
@@ -189,7 +197,7 @@ var Engine = (function(global) {
         enemy1.y = 60;
         allEnemies.push(enemy1);
 
-        enemy2.x = 400;
+        enemy2.x = 80;
         enemy2.y = 230;
         allEnemies.push(enemy2);
 
