@@ -34,7 +34,7 @@ Player.prototype.update = function(dt) {
         this.x > 480    ||
         this.y < -100      ||
         this.y > 460) {
-        console.log("player is out of canvas");
+        // console.log("player is out of canvas");
         alert("Player is out of bound");
         location.reload();
     }
@@ -66,20 +66,6 @@ Player.prototype.handleInput = function(keyup) {
 // Place the player object in a variable called player
 var allEnemies = [];
 var player = new Player;
-
-var enemy1 = new Enemy;
-// enemy1.x = 0;
-// enemy1.y = 60;
-// allEnemies.push(enemy1);
-
-var enemy2 = new Enemy;
-// enemy2.x = 400;
-// enemy2.y = 230;
-// allEnemies.push(enemy2);
-
-// var player = new Player;
-// player.x = 200;
-// player.y = 300;
 
 
 // This listens for key presses and sends the keys to your
