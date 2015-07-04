@@ -5,6 +5,7 @@ Objective:
 Help the player to cross the street without getting hit by the bugs.
 
 Game is over when:
+
 1. Player steps outside the screen
 2. Player is hit by a bug
 3. All bugs have disappeared from the screen
