@@ -1,14 +1,17 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-Objective: 
-Help the player to cross the street without getting hit by the bugs.
+Objective:
+```
+Race player against the bugs
+```
 
 Game is over when:
 
-1. Player steps outside the screen
-2. Player is hit by a bug
-3. All bugs have disappeared from the screen
+1. The first bug gets into the finish line first
+2. Player steps outside the screen
+3. Player is hit by a bug
+
 
 Use arrows key to move the player:
 * <kbd>Left Arrow</kbd> to move left

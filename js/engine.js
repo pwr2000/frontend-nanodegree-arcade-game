@@ -98,6 +98,10 @@ var Engine = (function(global) {
                 console.log("one of enemies is out of canvas");
                 // remove enemy when they're outside canvas
                 allEnemies.splice(enemy, 0);
+                if (typeof allEnemies[enemy] !== null) {
+                    alert("game over");
+                    location.reload();
+                }
             }
         });
         player.update();
@@ -183,17 +187,17 @@ var Engine = (function(global) {
     function reset() {
         // TODO: use for-loop to create enemies
         var enemy1 = new Enemy;
-        enemy1.x = 0;
+        enemy1.x = -50;
         enemy1.y = 60;
         allEnemies.push(enemy1);
 
         var enemy2 = new Enemy;
-        enemy2.x = 100;
+        enemy2.x = 150;
         enemy2.y = 150;
         allEnemies.push(enemy2);
 
         var enemy3 = new Enemy;
-        enemy3.x = 30;
+        enemy3.x = 0;
         enemy3.y = 230;
         allEnemies.push(enemy3);
 
