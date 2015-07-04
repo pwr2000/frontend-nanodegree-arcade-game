@@ -1,6 +1,15 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-Students should use this rubric: https://www.udacity.com/course/viewer#!/c-ud015/l-3072058665/m-3072588797
+Objective: help player to cross the street without getting hit by the bugs.
 
-for self-checking their submission.
+Game is over when:
+1) player steps outside the screen
+2) player is hit by a bug
+3) all bugs have disappeared from the screen
+
+Use arrows key to move the player:
+<kbd>37</kbd>: 'left',
+<kbd>38</kbd>: 'up',
+<kbd>39</kbd>: 'right',
+<kbd>40</kbd>: 'down'
