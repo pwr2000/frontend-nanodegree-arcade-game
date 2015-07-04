@@ -3,7 +3,8 @@ frontend-nanodegree-arcade-game
 
 Objective:
 ```
-Race player against the bugs
+Player will race against the bugs. 
+Whoever gets to the finish line first win!
 ```
 
 Game is over when:
