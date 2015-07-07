@@ -57,7 +57,7 @@ var Engine = (function(global) {
          * function again as soon as the browser is able to draw another frame.
          */
         win.requestAnimationFrame(main);
-    };
+    }
 
     /* This function does some initial setup that should only occur once,
      * particularly setting the lastTime variable that is required for the
@@ -97,7 +97,7 @@ var Engine = (function(global) {
         player.update();
     }
 
-    // checkCollisions by checking enemy and player coordinates plus/minus enemy's width and height
+    // RH: checkCollisions by checking enemy and player coordinates plus/minus enemy's width and height
     function checkCollisions() {
         allEnemies.forEach(function(enemy) {
             // console.log(enemy.x + " " + enemy.y);
@@ -176,7 +176,7 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // set new variables and coordinates for enemies and player and push each enemy variable into allEnemies array
+        // RH: Set new variables and coordinates for enemies and player and push each enemy variable into allEnemies array
         for(var i=1; i<4; i++){
             var enemy = new Enemy(0-i*101, 83*i-21);
             allEnemies.push(enemy);

@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-var Enemy = function(x,y) {
+var Enemy = function(x,y) { // RH: Add x and y variables to set enemy's coordinate
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -17,7 +17,7 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
 
-    // randomize the speed of enemies and multiply by dt parameter
+    // RH: Randomize the speed of enemies and multiply by dt parameter
     this.x += Math.floor((Math.random() * 1) + 0.3) * dt * 50;
 
     if (this.x > 400) {
@@ -37,14 +37,14 @@ var Player = function() {
     this.boy = 'images/char-boy.png';
 };
 
-// Set the crossing line for the player. Whenever the player reaches the line, player wins.
+// RH: Set the crossing line for the player. Whenever the player reaches the line, player wins.
 Player.prototype.update = function(dt) {
     if (this.y < -10) {
         alert("You Win!");
         location.reload();
     }
 
-// Set the boundaries for the player. Whenever the player steps out of the boundary, the game will restart.
+// RH: Set the boundaries for the player. Whenever the player steps out of the boundary, the game will restart.
     if (this.x < -50      ||
         this.x > 480    ||
         this.y > 460) {
