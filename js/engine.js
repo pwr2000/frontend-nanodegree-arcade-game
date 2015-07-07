@@ -181,20 +181,24 @@ var Engine = (function(global) {
      */
     function reset() {
         // set global variables for enemies and player and push each enemy variable into allEnemies array
-        var enemy1 = new Enemy;
-        enemy1.x = -50;
-        enemy1.y = 60;
-        allEnemies.push(enemy1);
+        // var enemy1 = new Enemy;
+        // enemy1.x = -50;
+        // enemy1.y = 60;
+        // allEnemies.push(enemy1);
 
-        var enemy2 = new Enemy;
-        enemy2.x = 150;
-        enemy2.y = 150;
-        allEnemies.push(enemy2);
+        // var enemy2 = new Enemy;
+        // enemy2.x = 150;
+        // enemy2.y = 150;
+        // allEnemies.push(enemy2);
 
-        var enemy3 = new Enemy;
-        enemy3.x = 0;
-        enemy3.y = 230;
-        allEnemies.push(enemy3);
+        // var enemy3 = new Enemy;
+        // enemy3.x = 0;
+        // enemy3.y = 230;
+        // allEnemies.push(enemy3);
+        for(var i=1; i<4; i++){
+            var enemy = new Enemy(0-i*101, 83*i-21);
+            allEnemies.push(enemy);
+        }
 
         player.x = 200;
         player.y = 300;
