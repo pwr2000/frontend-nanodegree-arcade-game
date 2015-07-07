@@ -92,21 +92,16 @@ var Engine = (function(global) {
      */
     function updateEntities(dt) {
         allEnemies.forEach(function(enemy) {
-            if (enemy.x < 501) {
+            if (enemy.x < canvas.width) {
                 enemy.update(dt);
             } else {
-                console.log("one of enemies is out of canvas");
-                // remove enemy when they're outside canvas
-                allEnemies.splice(enemy, 0);
-                if (typeof allEnemies[enemy] !== null) {
-                    alert("game over");
-                    location.reload();
-                }
+                enemy.render();
             }
         });
         player.update();
     }
 
+    // checkCollisions by checking enemy and player coordinates plus/minus enemy's width and height
     function checkCollisions() {
         allEnemies.forEach(function(enemy) {
             // console.log(enemy.x + " " + enemy.y);
@@ -185,21 +180,25 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // TODO: use for-loop to create enemies
-        var enemy1 = new Enemy;
-        enemy1.x = -50;
-        enemy1.y = 60;
-        allEnemies.push(enemy1);
+        // set global variables for enemies and player and push each enemy variable into allEnemies array
+        // var enemy1 = new Enemy;
+        // enemy1.x = -50;
+        // enemy1.y = 60;
+        // allEnemies.push(enemy1);
 
-        var enemy2 = new Enemy;
-        enemy2.x = 150;
-        enemy2.y = 150;
-        allEnemies.push(enemy2);
+        // var enemy2 = new Enemy;
+        // enemy2.x = 150;
+        // enemy2.y = 150;
+        // allEnemies.push(enemy2);
 
-        var enemy3 = new Enemy;
-        enemy3.x = 0;
-        enemy3.y = 230;
-        allEnemies.push(enemy3);
+        // var enemy3 = new Enemy;
+        // enemy3.x = 0;
+        // enemy3.y = 230;
+        // allEnemies.push(enemy3);
+        for(var i=1; i<4; i++){
+            var enemy = new Enemy(0-i*101, 83*i-21);
+            allEnemies.push(enemy);
+        }
 
         player.x = 200;
         player.y = 300;
