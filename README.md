@@ -1,7 +1,7 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-Play this game on GitHub Page: [This link](http://pwr2000.github.io/frontend-nanodegree-arcade-game)
+Play this game on GitHub Page: [Game link](http://pwr2000.github.io/frontend-nanodegree-arcade-game)
 
 Objective:
 ```

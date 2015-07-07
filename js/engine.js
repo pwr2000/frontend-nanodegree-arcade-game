@@ -92,11 +92,7 @@ var Engine = (function(global) {
      */
     function updateEntities(dt) {
         allEnemies.forEach(function(enemy) {
-            if (enemy.x < canvas.width) {
-                enemy.update(dt);
-            } else {
-                enemy.render();
-            }
+            enemy.update(dt);
         });
         player.update();
     }
@@ -180,21 +176,7 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // set global variables for enemies and player and push each enemy variable into allEnemies array
-        // var enemy1 = new Enemy;
-        // enemy1.x = -50;
-        // enemy1.y = 60;
-        // allEnemies.push(enemy1);
-
-        // var enemy2 = new Enemy;
-        // enemy2.x = 150;
-        // enemy2.y = 150;
-        // allEnemies.push(enemy2);
-
-        // var enemy3 = new Enemy;
-        // enemy3.x = 0;
-        // enemy3.y = 230;
-        // allEnemies.push(enemy3);
+        // set new variables and coordinates for enemies and player and push each enemy variable into allEnemies array
         for(var i=1; i<4; i++){
             var enemy = new Enemy(0-i*101, 83*i-21);
             allEnemies.push(enemy);
