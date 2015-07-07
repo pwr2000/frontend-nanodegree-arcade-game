@@ -92,21 +92,16 @@ var Engine = (function(global) {
      */
     function updateEntities(dt) {
         allEnemies.forEach(function(enemy) {
-            if (enemy.x < 501) {
+            if (enemy.x < canvas.width) {
                 enemy.update(dt);
             } else {
-                console.log("one of enemies is out of canvas");
-                // remove enemy when they're outside canvas
-                allEnemies.splice(enemy, 0);
-                if (typeof allEnemies[enemy] !== null) {
-                    alert("game over");
-                    location.reload();
-                }
+                enemy.render();
             }
         });
         player.update();
     }
 
+    // checkCollisions by checking enemy and player coordinates plus/minus enemy's width and height
     function checkCollisions() {
         allEnemies.forEach(function(enemy) {
             // console.log(enemy.x + " " + enemy.y);
@@ -185,7 +180,7 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // TODO: use for-loop to create enemies
+        // set global variables for enemies and player and push each enemy variable into allEnemies array
         var enemy1 = new Enemy;
         enemy1.x = -50;
         enemy1.y = 60;

@@ -14,8 +14,9 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+
+    // randomize the speed of enemies and multiply by dt parameter
     this.x += Math.floor((Math.random() * 1) + 0.1) * dt * 50;
-    // console.log(this.x);
 };
 
 // Draw the enemy on the screen, required method for game
@@ -30,12 +31,14 @@ var Player = function() {
     this.boy = 'images/char-boy.png';
 };
 
+// Set the crossing line for the player. Whenever the player reaches the line, player wins.
 Player.prototype.update = function(dt) {
     if (this.y < -10) {
         alert("You Win!");
         location.reload();
     }
 
+// Set the boundaries for the player. Whenever the player steps out of the boundary, the game will restart.
     if (this.x < -50      ||
         this.x > 480    ||
         this.y > 460) {
@@ -49,20 +52,21 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.boy), this.x, this.y);
 };
 
+// Set player movement based on keycode event listener
 Player.prototype.handleInput = function(keyup) {
-    console.log(keyup);
+    // console.log(keyup);
     switch (keyup) {
         case 'left':
-            this.x -= 10;
+            this.x -= 100;
             break;
         case 'right':
-            this.x += 10;
+            this.x += 100;
             break;
         case 'up':
-            this.y -= 10;
+            this.y -= 80;
             break;
         case 'down':
-            this.y += 10;
+            this.y += 80;
             break;
     }
 };
