@@ -19,9 +19,21 @@ Enemy.prototype.update = function(dt) {
 
     // RH: Randomize the speed of enemies and multiply by dt parameter
     this.x += Math.floor((Math.random() * 1) + 0.5) * dt * 50;
+    this.checkCollision();
 
     if (this.x > 505) {
         this.x = -100;
+    }
+};
+
+// RH: Move checkCollision function from engine.js to app.js by making it as prototype function
+Enemy.prototype.checkCollision = function() {
+    if (this.x < player.x + 60 &&
+        this.x > player.x - 60 &&
+        this.y < player.y + 50 &&
+        this.y > player.y - 20) {
+        alert("Game Over");
+        location.reload();
     }
 };
 

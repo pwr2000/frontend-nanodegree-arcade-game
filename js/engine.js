@@ -80,7 +80,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        checkCollisions();
+        // checkCollisions();
     }
 
     /* This is called by the update function  and loops through all of the
@@ -97,21 +97,20 @@ var Engine = (function(global) {
         player.update();
     }
 
-    // RH: checkCollisions by checking enemy and player coordinates plus/minus enemy's width and height
-    function checkCollisions() {
-        allEnemies.forEach(function(enemy) {
-            // console.log(enemy.x + " " + enemy.y);
-            if (enemy.x < player.x + 60 &&
-                enemy.x > player.x - 60 &&
-                enemy.y < player.y + 50 &&
-                enemy.y > player.y - 20) {
-                // collision detected!
-                alert("Game Over");
-                location.reload();
-        }
-        });
-        // console.log(player.x + " " + player.y);
-    }
+    // function checkCollisions() {
+    //     allEnemies.forEach(function(enemy) {
+    //         console.log(enemy.x + " " + enemy.y);
+    //         if (enemy.x < player.x + 60 &&
+    //             enemy.x > player.x - 60 &&
+    //             enemy.y < player.y + 50 &&
+    //             enemy.y > player.y - 20) {
+    //             // collision detected!
+    //             alert("Game Over");
+    //             location.reload();
+    //     }
+    //     });
+    //     console.log(player.x + " " + player.y);
+    // }
 
     /* This function initially draws the "game level", it will then call
      * the renderEntities function. Remember, this function is called every
