@@ -18,9 +18,9 @@ Enemy.prototype.update = function(dt) {
     // all computers.
 
     // RH: Randomize the speed of enemies and multiply by dt parameter
-    this.x += Math.floor((Math.random() * 1) + 0.3) * dt * 50;
+    this.x += Math.floor((Math.random() * 1) + 0.5) * dt * 50;
 
-    if (this.x > 400) {
+    if (this.x > 505) {
         this.x = -100;
     }
 };
@@ -63,16 +63,16 @@ Player.prototype.handleInput = function(keyup) {
     // console.log(keyup);
     switch (keyup) {
         case 'left':
-            this.x -= 100;
+            this.x -= 101;
             break;
         case 'right':
-            this.x += 100;
+            this.x += 101;
             break;
         case 'up':
-            this.y -= 80;
+            this.y -= 83;
             break;
         case 'down':
-            this.y += 80;
+            this.y += 83;
             break;
     }
 };
