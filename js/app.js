@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-var Enemy = function(x,y) {
+var Enemy = function(x,y) { // RH: Add x and y variables to set enemy's coordinate
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -17,11 +17,23 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
 
-    // randomize the speed of enemies and multiply by dt parameter
-    this.x += Math.floor((Math.random() * 1) + 0.3) * dt * 50;
+    // RH: Randomize the speed of enemies and multiply by dt parameter
+    this.x += Math.floor((Math.random() * 1) + 0.5) * dt * 50;
+    this.checkCollision();
 
-    if (this.x > 400) {
+    if (this.x > 505) {
         this.x = -100;
+    }
+};
+
+// RH: Move checkCollision function from engine.js to app.js by making it as prototype function
+Enemy.prototype.checkCollision = function() {
+    if (this.x < player.x + 60 &&
+        this.x > player.x - 60 &&
+        this.y < player.y + 50 &&
+        this.y > player.y - 20) {
+        alert("Game Over");
+        location.reload();
     }
 };
 
@@ -37,14 +49,14 @@ var Player = function() {
     this.boy = 'images/char-boy.png';
 };
 
-// Set the crossing line for the player. Whenever the player reaches the line, player wins.
+// RH: Set the crossing line for the player. Whenever the player reaches the line, player wins.
 Player.prototype.update = function(dt) {
     if (this.y < -10) {
         alert("You Win!");
         location.reload();
     }
 
-// Set the boundaries for the player. Whenever the player steps out of the boundary, the game will restart.
+// RH: Set the boundaries for the player. Whenever the player steps out of the boundary, the game will restart.
     if (this.x < -50      ||
         this.x > 480    ||
         this.y > 460) {
@@ -63,16 +75,16 @@ Player.prototype.handleInput = function(keyup) {
     // console.log(keyup);
     switch (keyup) {
         case 'left':
-            this.x -= 100;
+            this.x -= 101;
             break;
         case 'right':
-            this.x += 100;
+            this.x += 101;
             break;
         case 'up':
-            this.y -= 80;
+            this.y -= 83;
             break;
         case 'down':
-            this.y += 80;
+            this.y += 83;
             break;
     }
 };

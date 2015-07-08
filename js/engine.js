@@ -57,7 +57,7 @@ var Engine = (function(global) {
          * function again as soon as the browser is able to draw another frame.
          */
         win.requestAnimationFrame(main);
-    };
+    }
 
     /* This function does some initial setup that should only occur once,
      * particularly setting the lastTime variable that is required for the
@@ -80,7 +80,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        checkCollisions();
+        // checkCollisions();
     }
 
     /* This is called by the update function  and loops through all of the
@@ -97,21 +97,20 @@ var Engine = (function(global) {
         player.update();
     }
 
-    // checkCollisions by checking enemy and player coordinates plus/minus enemy's width and height
-    function checkCollisions() {
-        allEnemies.forEach(function(enemy) {
-            // console.log(enemy.x + " " + enemy.y);
-            if (enemy.x < player.x + 60 &&
-                enemy.x > player.x - 60 &&
-                enemy.y < player.y + 50 &&
-                enemy.y > player.y - 20) {
-                // collision detected!
-                alert("Game Over");
-                location.reload();
-        }
-        });
-        // console.log(player.x + " " + player.y);
-    }
+    // function checkCollisions() {
+    //     allEnemies.forEach(function(enemy) {
+    //         console.log(enemy.x + " " + enemy.y);
+    //         if (enemy.x < player.x + 60 &&
+    //             enemy.x > player.x - 60 &&
+    //             enemy.y < player.y + 50 &&
+    //             enemy.y > player.y - 20) {
+    //             // collision detected!
+    //             alert("Game Over");
+    //             location.reload();
+    //     }
+    //     });
+    //     console.log(player.x + " " + player.y);
+    // }
 
     /* This function initially draws the "game level", it will then call
      * the renderEntities function. Remember, this function is called every
@@ -176,7 +175,7 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // set new variables and coordinates for enemies and player and push each enemy variable into allEnemies array
+        // RH: Set new variables and coordinates for enemies and player and push each enemy variable into allEnemies array
         for(var i=1; i<4; i++){
             var enemy = new Enemy(0-i*101, 83*i-21);
             allEnemies.push(enemy);
