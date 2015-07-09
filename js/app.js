@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-var Enemy = function(x,y) { // RH: Add x and y variables to set enemy's coordinate
+var Enemy = function(x, y) { // RH: Add x and y variables to set enemy's coordinate
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
