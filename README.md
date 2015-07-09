@@ -5,8 +5,7 @@ Play this game on GitHub Page: [Game link](http://pwr2000.github.io/frontend-nan
 
 Objective:
 ```
-Player will race against the bugs. 
-Whoever gets to the finish line first win!
+Help Char Boy cross the street without getting hit by the bugs.
 ```
 
 Game is over when:
