@@ -28,12 +28,12 @@ Enemy.prototype.update = function(dt) {
 
 // RH: Move checkCollision function from engine.js to app.js by making it as prototype function
 Enemy.prototype.checkCollision = function() {
-    if (this.x < player.x + 60 &&
-        this.x > player.x - 60 &&
-        this.y < player.y + 50 &&
+    if (this.x < player.x + 40 &&
+        this.x > player.x - 40 &&
+        this.y < player.y + 40 &&
         this.y > player.y - 20) {
-        alert("Game Over");
-        location.reload();
+        player.x = 200;
+        player.y = 300;
     }
 };
 
